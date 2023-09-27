@@ -1,0 +1,48 @@
+/* Navbar.css */
+
+.navbar-container {
+    background-color: #006a7f;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    /* border: 1px solid red; */
+  }
+  
+  .navbar-link:hover {
+    text-decoration: underline;
+  }
+  
+
+  .navbar-register {
+    background-color: #009688; 
+    color: white; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    text-align: center;
+    margin-right: 20px; 
+    display: inline-block;
+    text-decoration: none; 
+    transition: background-color 0.3s ease; 
+}
+
+
+.navbar-register:hover {
+    background-color: #00786c;
+}
+
+
+
+.spanName {
+  font-weight: bold;
+  color: yellow; 
+  font-size: 25px; 
+}
+

@@ -1,0 +1,42 @@
+.Container{
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 20px 0;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+
+.header{
+    /* border: 1px solid red; */
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.display-notes-container{
+    text-align: center;
+
+}
+
+select{
+    margin: 10px 10px 10px 10px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #006a7f;
+    color: white;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+}
+
+
+.add-notes-container{
+    width: 50%;
+    margin: auto;
+
+}
+
+.add-notes-container > h1{
+    text-align: center;
+}

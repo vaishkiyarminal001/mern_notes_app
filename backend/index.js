@@ -1,16 +1,16 @@
 const express = require("express");
-const { SingDetails } = require("./db");
 const { connection } = require("mongoose");
+const cors = require("cors");
+const jwt = require('jsonwebtoken');
+
+const { SingDetails, NotesDetail } = require("./db");
+
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 
-// just to check working or not
-
-app.get("/", (req, res) =>{
-    res.send("Hello");
-})
 
 // signup rout
 
@@ -32,8 +32,28 @@ app.post("/login", async(req, res) =>{
     if(!user){
         res.send("Please Signup first");
     }else {
-        res.send("Login Successfully");
+        const token = jwt.sign({ userid: user._id }, 'minal');
+        res.send({msg:"Login Successfully", token:token, username:user.username});
     }
+})
+
+// notes rout
+app.post("/create", async(req, res) =>{
+    const payload = req.body;
+    console.log(payload);
+
+    const newNotes = new NotesDetail(payload);
+    await newNotes.save();
+    res.send({Msg : "Created New Notes", newNotes});
+})
+
+
+// for read the notes
+
+app.get("/", async(req, res) =>{
+    
+    const readNotes = await NotesDetail.find();
+    res.send(readNotes);
 })
 
 
