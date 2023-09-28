@@ -61,7 +61,7 @@ export default function Navbar() {
   <>
   
     <Link to="/register" className="navbar-register">Register</Link>
-    <Link to="/signin" className="navbar-register">Signin</Link>
+    <Link to="/singin" className="navbar-register">Signin</Link>
   </>
 ) : (
   <span className="navbar-link" onClick={handleLogout}>Logout</span>

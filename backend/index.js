@@ -23,6 +23,7 @@ app.post("/signup", async(req, res) =>{
     res.send({Msg : "Signup Successfully", newUser});
 });
 
+
 //login rout
 
 app.post("/login", async(req, res) =>{
@@ -50,13 +51,55 @@ app.post("/create", async(req, res) =>{
 
 // for read the notes
 
-app.get("/", async(req, res) =>{
+app.get("/notes", async(req, res) =>{
     
     const readNotes = await NotesDetail.find();
     res.send(readNotes);
-})
+});
 
 
+// delete rout
+
+
+    app.delete("/notes/:notesId", async (req, res) => {
+        const notesId = req.params.notesId;
+    
+        try {
+            const deletedNote = await NotesDetail.findByIdAndRemove(notesId);
+    
+            if (!deletedNote) {
+                return res.status(404).json({ message: "Note not found" });
+            }
+    
+            res.json({ message: "Note deleted successfully" });
+        } catch (error) {
+            console.error("Error:", error);
+            res.status(500).json({ message: "Internal server error" });
+        }
+    });
+
+
+    // edit method
+
+    app.put("/notes/:notesId", async (req, res) => {
+        const notesId = req.params.notesId;
+        const updatedNoteData = req.body;
+    
+        try {
+            const updatedNote = await NotesDetail.findByIdAndUpdate(notesId, updatedNoteData, { new: true });
+    
+            if (!updatedNote) {
+                return res.status(404).json({ message: "Note not found" });
+            }
+    
+            res.json({ message: "Note updated successfully", updatedNote });
+        } catch (error) {
+            console.error("Error:", error);
+            res.status(500).json({ message: "Internal server error" });
+        }
+    });
+
+    
 app.listen(8080, async() =>{
 
     try{
@@ -67,4 +110,4 @@ app.listen(8080, async() =>{
     }
     console.log("Connection Established");
    
-})
+});

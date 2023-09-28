@@ -1,16 +1,23 @@
 import { useState } from "react";
 import "./Notes.css";
 import "../mediaquery.css";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Navigate } from "react-router-dom";
 
 const IntitalNotes = {
     notes : "",
     category : ""
 }
 
+
+
 export const Addnotes = ({})=>{
 
     const [state, setState] = useState(IntitalNotes);
     console.log(state);
+
+    const [post, setPost] = useState(false);
 
     // input box for adding notes
     const handleInput = ((e)=>{
@@ -33,9 +40,13 @@ export const Addnotes = ({})=>{
            .then((response)=> response.json())
            .then((data)=> console.log(data));
         //    DisplayNotes()
-           alert("Successfully Posted");
+           toast("Successfully Posted");
+          setPost(true);
           
+    }
 
+    if(post){
+        return <Navigate to="/"/>
     }
 
    

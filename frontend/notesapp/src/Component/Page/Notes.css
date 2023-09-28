@@ -40,3 +40,7 @@ select{
 .add-notes-container > h1{
     text-align: center;
 }
+
+.DeletButton{
+    background-color: red;
+}
