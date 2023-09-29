@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const SingSchema = mongoose.Schema({
     username : String,
@@ -18,7 +19,7 @@ const NotesSchema = mongoose.Schema({
 const SingDetails = mongoose.model("sign", SingSchema);
 const NotesDetail = mongoose.model("note", NotesSchema);
 
-const connection = mongoose.connect("mongodb+srv://vaishkiyarminal001:9304059268@cluster0.nalowzi.mongodb.net/notesapp?retryWrites=true&w=majority");
+const connection = mongoose.connect(process.env.mongo_url);
 
 module.exports = {
     connection,

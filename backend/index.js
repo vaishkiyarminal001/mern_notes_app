@@ -2,6 +2,7 @@ const express = require("express");
 const { connection } = require("mongoose");
 const cors = require("cors");
 const jwt = require('jsonwebtoken');
+require("dotenv").config();
 
 const { SingDetails, NotesDetail } = require("./db");
 
@@ -33,7 +34,7 @@ app.post("/login", async(req, res) =>{
     if(!user){
         res.send("Please Signup first");
     }else {
-        const token = jwt.sign({ userid: user._id }, 'minal');
+        const token = jwt.sign({ userid: user._id }, process.env.jwt_key);
         res.send({msg:"Login Successfully", token:token, username:user.username});
     }
 })
