@@ -3,6 +3,8 @@ import "./Notes.css";
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react';
 import { Heading, Text, Button, Select } from "@chakra-ui/react";
 import "../mediaquery.css";
+import { myAuthContextProvider } from "../Context/AuthContextProvider";
+import { useContext } from "react";
 
 export const Displaynotes = ()=>{
     
@@ -13,6 +15,8 @@ export const Displaynotes = ()=>{
     const [delet, setDelete] = useState(null);
 
     const [editNote, setEditNote] = useState({ id: null, notes: "", category: "" });
+    const {token} = useContext(myAuthContextProvider);
+    const [load, setLoad] = useState(true);
 
     useEffect(() => {
         DisplayNotes();
@@ -35,7 +39,15 @@ export const Displaynotes = ()=>{
         const res = await fetch(url);
         const data = await res.json();
         setState(data);
+        setLoad(false);
         console.log(data);
+    }
+
+    // loader 
+    if(load){
+        return(
+        <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"/>);
+
     }
 
 
@@ -128,7 +140,11 @@ export const Displaynotes = ()=>{
 <Card align='center'>
 
   <CardHeader >
-    <Heading size='md'> Notes</Heading>
+    <Heading size='md'> Notes</Heading> <h4>Created At:- {e.createdAt}</h4> 
+
+    {/* <h4>Created By:- {token.username}</h4> */}
+
+
   </CardHeader>
 
   <CardBody className="header">
@@ -176,5 +192,7 @@ export const Displaynotes = ()=>{
         </div>
     );
 };
+
+
 
   

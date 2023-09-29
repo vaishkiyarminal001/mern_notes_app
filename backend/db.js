@@ -9,15 +9,16 @@ const SingSchema = mongoose.Schema({
 });
 
 const NotesSchema = mongoose.Schema({
-    notes : String,
-    category : String
+    notes: String,
+    category: String
+}, {
+    timestamps: true 
 });
-
 
 const SingDetails = mongoose.model("sign", SingSchema);
 const NotesDetail = mongoose.model("note", NotesSchema);
 
-const connection = mongoose.connect("mongodb://127.0.0.1:27017/noteapp");
+const connection = mongoose.connect("mongodb+srv://vaishkiyarminal001:9304059268@cluster0.nalowzi.mongodb.net/notesapp?retryWrites=true&w=majority");
 
 module.exports = {
     connection,
