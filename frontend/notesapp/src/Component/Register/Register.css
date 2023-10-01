@@ -1,36 +1,46 @@
 /* Register.css */
 
-.container {
+.form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
+    width: 85%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+     /* border: 1px solid red; */
+     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
-h2 {
+.form-container h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-form {
+.form-container form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-input {
+.form-container input {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #006a7f;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-shadow: 0px 0px 5px rgba(52, 152, 219, 0.5);
 }
 
-button {
+.form-container input:focus {
+    border-color: #e74c3c;
+}
+
+.form-container button {
     background-color: #007bff;
     color: white;
     padding: 10px 20px;
@@ -39,9 +49,10 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.form-container button:hover {
     background-color: #006a7f;
 }
+
 
 
 /* Signin.css */
@@ -50,12 +61,34 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
+    width: 85%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    /* border: 1px solid red; */
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
 }
+
+.signin-container > input {
+    width: 100%;
+    padding: 15px; 
+    margin: 10px 0;
+    border: 2px solid #006a7f; 
+    border-radius: 10px; 
+    font-size: 16px; 
+    outline: none; 
+    transition: border-color 0.3s ease; 
+  
+    box-shadow: 0px 0px 5px rgba(52, 152, 219, 0.5);
+  }
+  
+ 
+  .signin-container > input:focus {
+    border-color: #e74c3c; 
+  }
+  
 
 h2 {
     font-size: 24px;
@@ -88,4 +121,27 @@ button {
 
 button:hover {
     background-color: #006a7f;
+}
+
+
+/* Media query for medium-sized screens */
+@media screen and (max-width: 1024px) {
+    .form-container {
+        width: 90%; 
+    }
+    .form-container input,
+    .form-container button {
+        width: 70%; 
+    }
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+    .form-container {
+        width: 100%; 
+    }
+    .form-container input,
+    .form-container button {
+        width: 90%; 
+    }
 }

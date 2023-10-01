@@ -52,7 +52,7 @@ export default function Register() {
     <div>
         <h2>📝 Register Yourself</h2>
 
-        <form className="container">
+        <form className="form-container">
            <input name="username" placeholder="Enter Your Username" type="name" onChange={handleInput}/>
            <input name="email" placeholder="Enter Your Email" onChange={handleInput}/>
            <input name="password" placeholder="Enter Your Password" type="password" onChange={handleInput}/>

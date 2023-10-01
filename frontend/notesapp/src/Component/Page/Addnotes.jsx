@@ -57,14 +57,15 @@ export const Addnotes = ({})=>{
         <div className="add-notes-container">
            <h1>Add your amazing Notes 📝</h1>
            <form onSubmit={handlePost}>
-            <textarea name="notes" placeholder="Write Your important Words" onChange={handleInput} rows={6}></textarea>
+            
+            <textarea name="notes" placeholder="Write Your important Words" onChange={handleInput} rows={6} style={{ width: "100%" }}></textarea>
             
             <select name = "category" onChange={handleInput}>
                 <option>Category</option>
                 <option value="Most Important" >Most Important</option>
                 <option value="Less Important" >Less Important</option>
             </select>
-            <input type="Submit"></input>
+            <input type="Submit" className="submit-button"></input>
            </form>
         </div>
     )

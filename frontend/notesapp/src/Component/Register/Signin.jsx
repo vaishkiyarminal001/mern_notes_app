@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Signin() {
 
   const {isAuth, login, token} = useContext(myAuthContextProvider);
-  console.log(isAuth);
+  console.log(token);
 
     const InitalValue = {
         email : "",
@@ -38,13 +38,20 @@ const handleClick = (e) =>{
        .then((response)=> response.json())
        .then((token)=> login(token));
 
-       toast("Successfully Post");
+      //  toast("Successfully Login");
+
+      if(token){
+        toast("Successfully Login");
+      }
+      // else {
+      //   toast("Invalid Crendatials");
+      // }
       
 }
 
+
+
 if(token){
-
-
   return <Navigate to="/"/>
 }
 

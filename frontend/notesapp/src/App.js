@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import "./App.css";
-import { background } from '@chakra-ui/react';
+
 
 function App() {
 
@@ -19,10 +19,13 @@ function App() {
       {/* <Displaynotes/> */}
 
 <Navbar/>
-<button onClick={(() =>{
+<button className="Mode" onClick={(() =>{
   setButton(!toggle);
   
 })}>{toggle ? "Dark" : "Light"}</button>
+
+
+
       <Allrouts/>
       <ToastContainer/>
 

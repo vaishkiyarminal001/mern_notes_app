@@ -4,8 +4,11 @@
     background-color: #006a7f;
     color: white;
     padding: 10px;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+   
     
   }
   
@@ -14,6 +17,7 @@
     color: white;
     margin-right: 20px;
     /* border: 1px solid red; */
+    
   }
   
   .navbar-link:hover {
@@ -46,3 +50,43 @@
   font-size: 25px; 
 }
 
+
+
+/* media Query */
+
+
+/* Media query for medium-sized screens (e.g., tablets) */
+@media screen and (max-width: 1024px) {
+  /* Adjust styles for medium screens here */
+
+  /* For example, you can reduce padding or font size */
+  .navbar-container {
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  /* Modify styles for navbar links and register button */
+  .navbar-link {
+    font-size: 18px;
+  }
+
+  .navbar-register {
+    padding: 8px 16px;
+    font-size: 18px;
+  }
+}
+
+
+/* Media query for medium-sized screens */
+@media screen and (max-width: 1024px) {
+  .navbar-container { padding: 8px; font-size: 15px; }
+  .navbar-link { font-size: 15px; }
+  .navbar-register { padding: 8px 16px; font-size: 15px; }
+}
+
+/* Media query for small screens  */
+@media screen and (max-width: 768px) {
+  .navbar-container { padding: 6px; font-size: 15px; }
+  .navbar-link { font-size: 15px; }
+  .navbar-register { padding: 6px 12px; font-size: 15px; }
+}

@@ -2,20 +2,23 @@
 
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     padding: 20px 0;
-    width: 50%;
+    width: 90%;
     margin: auto;
     margin-bottom: 10px;
     border-radius: 30px;
+    /* border: 1px solid red; */
 }
 
 .header{
     /* border: 1px solid red; */
     text-align: center;
     padding: 10px 10px;
+    
 }
 
 .display-notes-container{
     text-align: center;
+    /* border: 1px solid red; */
 
 }
 
@@ -28,6 +31,7 @@ select{
     font-size: 20px;
     border: none;
     text-align: center;
+    
 }
 
 
@@ -46,3 +50,36 @@ select{
 
 
 }
+
+.submit-button {
+    background-color: rgb(248, 248, 28);
+    color: black;
+    padding: 10px 20px; 
+    width: 50%;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+
+  }
+  
+  .submit-button:hover {
+    background-color: red;
+    color: white;
+  }
+  
+  /* Media query for medium-sized screens  */
+@media screen and (max-width: 1024px) {
+    .Container {
+      width: 80%; 
+    }
+}
+
+/* Media query for smaller screens  */
+@media screen and (max-width: 768px) {
+    .Container {
+      width: 100%;
+    }
+  
+  }
